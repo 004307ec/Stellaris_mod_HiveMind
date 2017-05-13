@@ -1,0 +1,359 @@
+# ###############
+# `Rapid adoptation of technology`
+# ###############
+
+tech_rapid_adoptation = {
+    cost = @tier2cost4
+    area = society
+    tier = 2
+    category = {biology}
+    weight = @tier2weight2
+    is_reverse_engineerable = no
+    is_rare = yes
+
+    # significantly add output of applied science
+    modifier = {
+        category_industry_research_speed_mult = 0.1
+        category_materials_research_speed_mult = 0.1
+        category_rocketry_research_speed_mult = 0.15
+        category_voidcraft_research_speed_mult = 0.15
+        category_field_manipulation_research_speed_mult = 0.05
+        category_particles_research_speed_mult = 0.15
+        category_computing_research_speed_mult = 0.15
+        category_military_theory_research_speed_mult = 0.15
+	}
+
+    weight_modifier = {
+        factor = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_trait = trait_hive_mind
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.8
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+        modifier = {
+            factor = 2.5
+            research_leader = {
+                area = society
+                has_level > 4
+            }
+        }
+    }
+
+    ai_weight = {
+        #make it harder for AI to research
+		factor = 1 
+        modifier = {
+            factor = 0
+            NOT = {
+                has_trait = trait_hive_mind
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.8
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+	}
+
+}
+
+tech_special_propaganda_1 = {
+    cost = @tier1cost2
+    area = society
+    tier = 1
+    category = {biology}
+    weight = @tier1weight3
+    is_reverse_engineerable = no
+    modifier = {
+        influence_gain_add = 1
+        influence_gain_mult = 0.05
+    }
+
+    weight_modifier = {
+        factor = 1
+        modifier = {
+            factor = 0
+            OR = {
+                NOT = {
+                    has_trait = trait_hive_mind
+                }
+                num_communications < 1   
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.8
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+        modifier = {
+            factor = 2.5
+            research_leader = {
+                area = society
+                has_level > 4
+            }
+        }
+    }
+
+    ai_weight = {
+        #make it harder for AI to research
+		factor = 1 
+        modifier = {
+            factor = 0
+            NOT = {
+                has_trait = trait_hive_mind
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.8
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+	}
+}
+
+tech_special_propaganda_2 = {
+    cost = @tier2cost1
+    area = society
+    tier = 2
+    category = {biology}
+    weight = @tier2weight1
+    is_reverse_engineerable = no
+    prerequisites = { "tech_special_propaganda_1" }
+    modifier = {
+        influence_gain_add = 1
+        influence_gain_mult = 0.075
+        country_trade_attractiveness = 0.1
+    }
+
+    weight_modifier = {
+        factor = 1
+        modifier = {
+            factor = 0
+            OR = {
+                NOT = {
+                    has_trait = trait_hive_mind
+                }
+                num_communications < 3
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.15
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.35
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+        modifier = {
+            factor = 1.6
+            research_leader = {
+                area = society
+                has_level > 4
+            }
+        }
+    }
+
+    ai_weight = {
+        #make it harder for AI to research
+		factor = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_trait = trait_hive_mind
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.8
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+	}
+}
+
+tech_special_propaganda_3 = {
+    cost = @tier2cost4
+    area = society
+    tier = 2
+    category = {biology}
+    weight = @tier2weight3
+    is_reverse_engineerable = no
+    prerequisites = { "tech_special_propaganda_2" }
+    modifier = {
+        influence_gain_add = 2
+        influence_gain_mult = 0.1
+        country_trade_attractiveness = 0.2
+
+    }
+
+    weight_modifier = {
+        factor = 1
+        modifier = {
+            factor = 0
+            OR = {
+                NOT = {
+                    has_trait = trait_hive_mind
+                }
+                num_communications < 5
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.15
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.35
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+        modifier = {
+            factor = 1.6
+            research_leader = {
+                area = society
+                has_level > 4
+            }
+        }
+    }
+
+    ai_weight = {
+        #make it harder for AI to research
+		factor = 1  
+        modifier = {
+            factor = 0
+            NOT = {
+                has_trait = trait_hive_mind
+            }
+        }
+        modifier = {
+            factor = 1.05
+            research_leader = {
+                area = society
+                has_level > 1
+            }
+        }
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = society
+                has_level > 2
+            }
+        }
+        modifier = {
+            factor = 1.8
+            research_leader = {
+                area = society
+                has_level > 3
+            }
+        }
+	}
+}
