@@ -1,6 +1,9 @@
-use `num_comminications` to determine how many countries are interacting with hive mind.
+> use `num_comminications` to determine how many countries are interacting with hive mind.
 Example from 00_soc_tech.txt
 		modifier = {
 			factor = 0
 			num_communications < 1
 		}	
+
+> modifier labels: http://www.stellariswiki.com/Modifiers
+> directory structure: http://www.stellariswiki.com/Modding
